@@ -1,0 +1,72 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "145491",
+      "name": "箭头",
+      "font_class": "jiantou",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "476283",
+      "name": "icon正品",
+      "font_class": "iconzhengpin",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "838048",
+      "name": "7天无理由退货",
+      "font_class": "7tianwuliyoutuihuo",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "993258",
+      "name": "密码",
+      "font_class": "mima",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "1013888",
+      "name": "客服",
+      "font_class": "service",
+      "unicode": "e7bb",
+      "unicode_decimal": 59323
+    },
+    {
+      "icon_id": "2551694",
+      "name": "操作-免运费",
+      "font_class": "mianyunfei",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "9646484",
+      "name": "飞机2",
+      "font_class": "feiji",
+      "unicode": "e888",
+      "unicode_decimal": 59528
+    },
+    {
+      "icon_id": "11518443",
+      "name": "账号",
+      "font_class": "zhanghao",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "14055558",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    }
+  ]
+}

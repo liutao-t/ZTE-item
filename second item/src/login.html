@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div id="header">
+        <div class="header-con">
+            <img src="images/logo.png" alt="">
+        </div>
+    </div>
+    <!-- 主页面 -->
+    <div id="main">
+        <div class="main-con">
+            <!-- 左侧图片 -->
+            <div class="main-left">
+                <img src="images/login.jpg" alt="">
+            </div>
+            <!-- 右侧主栏 -->
+            <div class="main-right">
+                <!-- 右侧主栏头部列表 -->
+                <div class="login-head">
+                    <!-- 会员登录 -->
+                    <div class="viplogin">会员登陆</div>
+                    <!-- 免费注册 -->
+                    <div class="goregister"><a href="register.html"> 免费注册</a></div>
+                </div>
+                <!-- 表弹框     会员登录 -->
+                <div id="box">
+                    <div class="login-form">
+
+                        <ul>
+                            <!-- 账号 -->
+                            <li class="form-row">
+                                <span class="form-act">
+                                        <input id="username" class="input-block" type="text" placeholder="会员账号">
+                                        <i class="iconfont icon-zhanghao"></i>
+                                    </span>
+                            </li>
+                            <!--密码 -->
+                            <li class="form-row">
+                                <span class="form-act">
+                                        <input id="password" class="input-block" type="password" placeholder="填写密码">
+                                        <i class="iconfont icon-mima"></i>
+                                    </span>
+                            </li>
+                            <!-- 验证码 -->
+                            <!-- <li class="form-row verify-code">
+                                    <input type="text" class="verify-input">
+
+                                </li> -->
+                            <!-- 登录按钮 -->
+                            <li class="form-row">
+                                <button type="submit" id="login" class="btn btn-import"> 登录</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部版权信息 -->
+    <div id="footer">
+        <a href="">服务协议</a>|<a href="">隐私政策</a>|&copy;2014 - 2020 深圳市中兴智谷科技有限公司版权所有，并保留所有权利
+    </div>
+
+
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script>
+        // $(function() {
+        //     let username = localStorage.getItem("username");
+        //     let password = localStorage.getItem("password");
+        //     if (username && password) {
+        //         $("#username").val(username)
+        //         $("#password").val(password)
+        //             // $("#login").click()
+        //     }
+        // })
+        $("#login").click(function() {
+
+            let http = new XMLHttpRequest()
+            http.open("get", `http://127.0.0.1:8080/login?username=${$("#username").val()}&password=${$("#password").val()}`)
+            http.send()
+            http.onreadystatechange = function() {
+                if (http.readyState === 4) {
+                    if (http.responseText === "success") {
+                        alert("登录成功")
+                        location.href = "http://127.0.0.1/second item/index.html"
+                    } else {
+                        alert("用户名或密码错误")
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
