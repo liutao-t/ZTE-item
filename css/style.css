@@ -780,6 +780,8 @@ body {
 
 #wrap {
     padding: 30px 0;
+    height: 812px;
+    border-bottom: 1px solid #ccc;
 }
 
 .wrap-con {
@@ -843,13 +845,31 @@ body {
     width: 230px;
     height: 344px;
     margin: 0 5px 12px;
-    background-color: lightblue;
     float: left;
 }
 
 .item .pic {
     width: 230px;
     height: 230px;
+    position: relative;
+    cursor: pointer;
+}
+
+.join span {
+    width: 230px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: none;
+}
+
+.item .pic:hover span {
+    display: block;
 }
 
 .item .pic img {
@@ -861,27 +881,42 @@ body {
     width: 214px;
     height: 110px;
     padding: 5px 8px;
-    background-color: saddlebrown;
 }
 
 .caption .name {
     width: 204px;
     height: 36px;
     padding: 0 5px;
-    margin-bottom: 5px;
-    background-color: cadetblue;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #707070;
+    cursor: pointer;
 }
 
 .caption .price {
     width: 204px;
     height: 27px;
     padding: 0 5px;
-    margin-bottom: 5px;
-    background-color: cadetblue;
+    margin-bottom: 10px;
+    color: red;
+    font-size: 18px;
 }
 
 .caption .promotion {
     width: 214px;
     height: 20px;
-    background-color: cadetblue;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #e12334;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 6px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 3px;
 }
