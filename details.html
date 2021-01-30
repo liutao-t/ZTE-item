@@ -236,8 +236,8 @@
 
 
                 <ul class="list-right">
-                    <a href="#">首页</a>
-                    <a href="#">Axon系列</a>
+                    <a href="index.html">首页</a>
+                    <a href="list.html">Axon系列</a>
                     <a href="#">Blade系列</a>
                     <a href="#">线上服务站</a>
                     <a href="#">中兴社区</a>
@@ -346,19 +346,19 @@
                                 +
                             </span>
                             <span class="product-count">
-                                <input type="text" class="number" >
+                                <input type="text" class="number" value="1">
                             </span>
 
                             <span class="subtract">-</span>
                         </div>
                     </div>
                     <div class="btn-wrap">
-                        <a href="" class="buy">
+                        <a href="shopcar.html" class="buy">
                             <span>
                                 立即购买
                             </span>
                         </a>
-                        <a href="" class="joincar">
+                        <a href="shopcar.html" class="joincar">
                             <span>
                                 加入购物车
                             </span>
@@ -484,8 +484,9 @@
 
 
 
-    <script src="js/jquery.min.js"></script>
+
     <script src="js/machine.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script>
         let list = $(".smallimgList img")
         let big = $(".bigimg")
@@ -494,14 +495,9 @@
         let glassimg = document.querySelector(".glass img")
 
         bindEvent(list, "onclick", function() {
-                big.src = this.src;
-                glassimg.src = this.src;
-            })
-            // for (var i = 0; i < list.length; i++) {
-            //     list[i][onclick] = function() {
-            //         big.src = this.src;
-            //         glassimg.src = this.src;
-            //     }
+            big.src = this.src;
+            glassimg.src = this.src;
+        })
 
 
         big.onmouseenter = function() {
@@ -537,9 +533,20 @@
                 // 计算超大图的位置
                 glassimg.style.top = -glassimg.offsetHeight * xishu.y + glass.offsetHeight / 2 + "px"
             }
-
-
         }
+    </script>
+    <script>
+        $(".add").click(function() {
+
+            $(".number").val(parseInt($(".number").val()) + 1)
+        })
+        $(".subtract").click(function() {
+            if (parseInt($(".number").val()) <= 1) {
+                return 1
+            }
+            $(".number").val(parseInt($(".number").val()) - 1)
+
+        })
     </script>
 </body>
 

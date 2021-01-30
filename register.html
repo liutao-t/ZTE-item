@@ -53,7 +53,9 @@
     <!-- 头部 -->
     <div id="header">
         <div class="header-con">
-            <img src="images/logo.png" alt="">
+            <a href="index.html">
+                <img src="images/logo.png" alt="">
+            </a>
         </div>
     </div>
     <!-- 注册主界面 -->
@@ -118,6 +120,27 @@
     <div id="footer">
         <a href="">服务协议</a>|<a href="">隐私政策</a>|&copy;2014 - 2020 深圳市中兴智谷科技有限公司版权所有，并保留所有权利
     </div>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $("#register").click(function() {
+            let http = new XMLHttpRequest()
+            http.open("get", `http://127.0.0.1:8080/addUser?username=${$("#username").val()}&password=${$("#password").val()}&usercode=${$("#usercode").val()}`)
+            http.send()
+            http.onreadystatechange = function() {
+                if (http.readyState === 4) {
+                    if (http.responseText === "success") {
+                        alert("注册新用户成功，点击去登录");
+                        location.href = "http://127.0.0.1/ZTE-item/login.html";
+                    } else {
+                        alert("注册失败")
+                    }
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>

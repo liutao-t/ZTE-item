@@ -47,7 +47,8 @@ express.get("/login", (request, response) => {
 express.get("/addUser", (request, response) => {
         let username = request.query.username;
         let password = request.query.password;
-        sql.query(`INSERT INTO user (username,password) VALUES ("${username}","${password}")`, (error) => {
+        let usercode = request.query.usercode;
+        sql.query(`INSERT INTO user (username,password,usercode) VALUES ("${username}","${password}","${usercode}")`, (error) => {
             if (error) {
                 console.log(error);
                 response.send("error")
@@ -57,67 +58,6 @@ express.get("/addUser", (request, response) => {
         })
     })
     //向admin中引入数据库文件
-express.get("/getStudents", (request, response) => {
-        const id = request.query.id;
-        let s = id ? `SELECT * FROM students WHERE id="${id}"` : `SELECT * FROM students ORDER BY id`;
-        sql.query(s, (error, data) => {
-            if (error) {
-                console.log(error)
-                response.end("error")
-            } else {
-                response.send(data)
-            }
-        })
-    })
-    //修改数据
-express.get("/editStudent", (request, response) => {
-        const id = request.query.id;
-        const name = request.query.name;
-        const age = request.query.age;
-        // const sex = request.query.sex;
-        const city = request.query.city;
-        const joinDate = request.query.joinDate;
-        sql.query(`UPDATE students SET username="${name}",age="${age}",city="${city}",joinDate="${joinDate}" WHERE id="${id}"`, (error) => {
-            if (error) {
-                console.log(error)
-                response.end("error")
-            } else {
-                response.send("success")
-            }
-        })
-    })
-    //删除数据
-express.get("/delStudents", (request, response) => {
-        const id = request.query.id;
-        sql.query(`DELETE FROM students WHERE id=${id}`, (error, data) => {
-            if (error) {
-                console.log(error)
-                response.end("error")
-            } else {
-                response.end("success")
-            }
-        })
-    })
-    //增加学生数据
-express.get("/addStudent", (request, response) => {
-    const name = request.query.name;
-    const age = request.query.age;
-    const sex = request.query.sex;
-    const city = request.query.city;
-    const joinDate = request.query.joinDate;
-    if (name && age && sex && city && joinDate) {
-        sql.query(`INSERT INTO students (username,sex,age,city,joinDate) VALUES ("${name}","${sex}","${age}","${city}","${joinDate}")`, (error, data) => {
-            if (error) {
-                console.log(error)
-                response.end("error")
-            } else {
-                response.send("success")
-            }
-        })
-    } else {
-        response.end("error");
-    }
-})
 
 express.listen(port)
 console.log("server is running at " + port)

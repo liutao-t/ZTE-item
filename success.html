@@ -44,7 +44,7 @@
         <div class="header-con">
             <!-- logo -->
             <div class="logo">
-                <a href="#">
+                <a href="index.html">
                     <img src="images/logo.png" alt="">
                 </a>
             </div>
@@ -236,8 +236,8 @@
 
 
                 <ul class="list-right">
-                    <a href="#">首页</a>
-                    <a href="#">Axon系列</a>
+                    <a href="" class="index"> 首页</a>
+                    <a href="" class="list">Axon系列</a>
                     <a href="#">Blade系列</a>
                     <a href="#">线上服务站</a>
                     <a href="#">中兴社区</a>
@@ -348,7 +348,12 @@
         <img src="images/online.png" alt="">
     </div>
 
-
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(".index").click(function() {
+            location.href = "http://127.0.0.1/ZTE-item/index.html"
+        })
+    </script>
 </body>
 
 </html>

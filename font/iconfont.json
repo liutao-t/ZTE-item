@@ -48,6 +48,13 @@
       "unicode_decimal": 58949
     },
     {
+      "icon_id": "7516884",
+      "name": "返回顶部",
+      "font_class": "fanhuidingbu",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
       "icon_id": "9646484",
       "name": "飞机2",
       "font_class": "feiji",

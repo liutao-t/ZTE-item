@@ -14,7 +14,7 @@
     <!-- 头部 -->
     <div id="header">
         <div class="header-con">
-            <img src="images/logo.png" alt="">
+            <a href="index.html"> <img src="images/logo.png" alt=""></a>
         </div>
     </div>
     <!-- 主页面 -->
@@ -79,15 +79,6 @@
 
     <script src="js/jquery.min.js"></script>
     <script>
-        // $(function() {
-        //     let username = localStorage.getItem("username");
-        //     let password = localStorage.getItem("password");
-        //     if (username && password) {
-        //         $("#username").val(username)
-        //         $("#password").val(password)
-        //             // $("#login").click()
-        //     }
-        // })
         $("#login").click(function() {
 
             let http = new XMLHttpRequest()
@@ -97,7 +88,7 @@
                 if (http.readyState === 4) {
                     if (http.responseText === "success") {
                         alert("登录成功")
-                        location.href = "http://127.0.0.1/second item/index.html"
+                        location.href = "http://127.0.0.1/ZTE-item/index.html"
                     } else {
                         alert("用户名或密码错误")
                     }
